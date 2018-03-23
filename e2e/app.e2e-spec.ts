@@ -8,7 +8,7 @@ describe('App', () => {
     page.navigateTo();
   });
 
-  it('should display "<Angular 5 Library Starter Kit>"', () => {
-    expect(page.getTitleText()).toContain('<Angular 5 Library Starter Kit>');
+  it('should display "<Github page exemple>"', () => {
+    expect(page.getTitleText()).toContain('<Github page exemple>');
   });
 });
