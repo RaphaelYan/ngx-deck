@@ -126,7 +126,9 @@
 			}
 		}
 
-    this.items[this.current].classList.add('stack__item--current');
+		if (this.items[this.current]) {
+			this.items[this.current].classList.add('stack__item--current');
+		}
 	};
 
 	Stack.prototype.reject = function(callback) {

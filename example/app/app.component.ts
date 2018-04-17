@@ -1,4 +1,4 @@
-import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
+import { Component, ViewEncapsulation, ViewChild, AfterViewInit } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -10,7 +10,7 @@ import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
   ],
   encapsulation: ViewEncapsulation.None,
 })
-export class AppComponent {
+export class AppComponent implements AfterViewInit {
   @ViewChild('stack') stack;
   public items: any[] = [
     'assets/img/1.jpg',
@@ -20,6 +20,10 @@ export class AppComponent {
     'assets/img/5.jpg',
   ];
   public counter: number = 0;
+
+  public ngAfterViewInit() {
+    this.stack.init();
+  }
 
   public accept(event) {
     this.stack.accept(() => {

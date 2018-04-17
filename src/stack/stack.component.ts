@@ -1,4 +1,4 @@
-import { Component, AfterViewInit, Input } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 declare var Modernizr: any;
 declare var Stack: any;
@@ -9,7 +9,7 @@ declare var classie: any;
   templateUrl: './stack.component.html',
   styleUrls: ['./stack.component.scss']
 })
-export class StackComponent implements AfterViewInit {
+export class StackComponent {
   @Input() public items = [];
   private slamet: any;
 
@@ -21,11 +21,7 @@ export class StackComponent implements AfterViewInit {
     this.slamet.reject(callback);
   }
 
-  public ngAfterViewInit() {
-    this.init();
-  }
-
-  private init() {
+  public init() {
     if (typeof Stack === 'undefined') {
       return console.error('Please include Stack assets/js');
     }
