@@ -1,7 +1,7 @@
 import { Directive, Input, HostListener } from '@angular/core';
 
 @Directive({
-  selector: '[appTouchAnimation]'
+  selector: '[deckTouchAnimation]'
 })
 export class TouchAnimationDirective {
   @Input() private timer: number = 300;

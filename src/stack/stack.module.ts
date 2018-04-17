@@ -1,18 +1,18 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { TaggifyPipe } from './taggify.pipe';
+import { StackComponent } from './stack.component';
 
 @NgModule({
   imports: [
     CommonModule,
   ],
   exports: [
-    TaggifyPipe,
+    StackComponent,
   ],
   declarations: [
-    TaggifyPipe,
+    StackComponent,
   ],
   providers: [],
 })
-export class TaggifyModule { }
+export class StackModule { }

@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-import { TaggifyModule } from '../../src';
+import { StackModule } from '../../src';
 import { TouchAnimationModule } from '../../src';
 
 import { AppComponent } from './app.component';
@@ -9,7 +9,7 @@ import { AppComponent } from './app.component';
 @NgModule({
   imports: [
     BrowserModule,
-    TaggifyModule,
+    StackModule,
     TouchAnimationModule,
   ],
   declarations: [

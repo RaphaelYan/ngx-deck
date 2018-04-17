@@ -8,7 +8,7 @@ describe('App', () => {
     page.navigateTo();
   });
 
-  it('should display "<Github page exemple>"', () => {
-    expect(page.getTitleText()).toContain('<Github page exemple>');
+  it('should display "Deck Stack"', () => {
+    expect(page.getTitleText()).toContain('Deck Stack');
   });
 });

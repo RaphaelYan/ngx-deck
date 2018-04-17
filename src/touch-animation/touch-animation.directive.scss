@@ -1,4 +1,8 @@
-[apptouchanimation]::before {
+[decktouchanimation] {
+  position: relative;
+}
+
+[decktouchanimation]::before {
 	position: absolute;
   top: -4px;
   left: -4px;
@@ -10,7 +14,7 @@
   height: 50px;
 }
 
-[apptouchanimation].active::before {
+[decktouchanimation].active::before {
 	-webkit-animation: effect-touch-animation 0.3s ease-out forwards;
 	animation: effect-touch-animation 0.3s ease-out forwards;
 }

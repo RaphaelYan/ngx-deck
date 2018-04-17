@@ -10,7 +10,9 @@
   "main": "src/index.ts",
   "scripts": {
     "start": "ng serve --aot",
-    "build": "ng-packagr -p ng-package.json",
+    "build": "ng-packagr -p ng-package.json && npm run copy-js && npm run copy-scss",
+    "copy-js": "mkdir -p ./dist/assets && cp -R ./example/assets/js ./dist/assets/",
+    "copy-scss": "mkdir -p ./dist/assets/scss && cp ./src/stack/stack.component.scss ./dist/assets/scss/ && cp ./src/touch-animation/touch-animation.directive.scss ./dist/assets/scss/",
     "build-ghpages": "ng build --base-href \"https://RaphaelYan.github.io/ngx-deck/\" --output-path \"dist-ghpages\"",
     "test": "npm run lint && ng test --watch false",
     "test-watch": "ng test",
