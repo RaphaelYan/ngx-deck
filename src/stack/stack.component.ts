@@ -17,8 +17,8 @@ export class StackComponent implements AfterViewInit {
     this.slamet.accept(callback);
   }
 
-  public reject() {
-    this.slamet.reject();
+  public reject(callback) {
+    this.slamet.reject(callback);
   }
 
   public ngAfterViewInit() {

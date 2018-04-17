@@ -7,7 +7,10 @@
       </svg>
       <span class="counter__number">{{ counter }}</span>
     </div>
-    <deck-stack #stack [items]="items">
+    <deck-stack #stack>
+      <li class="stack__item" *ngFor="let item of items">
+        <img [attr.src]="item"/>
+      </li>
     </deck-stack>
     <div class="controls">
       <button deckTouchAnimation class="button button--reject" (click)="reject($event)">
