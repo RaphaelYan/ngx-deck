@@ -85,6 +85,9 @@ var AppComponent = (function () {
         ];
         this.counter = 0;
     }
+    AppComponent.prototype.ngAfterViewInit = function () {
+        this.stack.init();
+    };
     AppComponent.prototype.accept = function (event) {
         var _this = this;
         this.stack.accept(function () {
@@ -249,9 +252,6 @@ var StackComponent = (function () {
     };
     StackComponent.prototype.reject = function (callback) {
         this.slamet.reject(callback);
-    };
-    StackComponent.prototype.ngAfterViewInit = function () {
-        this.init();
     };
     StackComponent.prototype.init = function () {
         if (typeof Stack === 'undefined') {
