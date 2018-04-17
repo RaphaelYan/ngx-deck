@@ -36,7 +36,7 @@ webpackEmptyAsyncContext.id = "../../../../../example/$$_lazy_route_resource laz
 /***/ "../../../../../example/app/app.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container\">\n  <div class=\"content\">\n    <h1>Deck Stack</h1>\n    <div class=\"counter\" id=\"counter\">\n      <svg width=\"40\" height=\"40\" viewBox=\"0 0 60 60\">\n        <path d=\"M55.215 8.397c-0.336-1.32-1.968-2.397-3.63-2.397h-43.17c-1.665 0-3.297 1.077-3.63 2.397l-0.603 3.603h51.633l-0.6-3.603zM58.236 15h-56.475c-1.026 0-1.827 0.882-1.731 1.905l2.769 35.007c0.114 1.182 1.11 2.088 2.298 2.088h49.803c1.191 0 2.184-0.906 2.298-2.088l2.769-35.007c0.099-1.023-0.705-1.905-1.731-1.905zM37.314 25.125c1.554 0 2.814 1.26 2.814 2.814s-1.26 2.814-2.814 2.814-2.814-1.263-2.814-2.817c0-1.551 1.26-2.811 2.814-2.811zM16.5 42l7.458-17.142 8.481 13.728 7.272-3.612 3.789 7.026h-27z\"></path>\n      </svg>\n      <span class=\"counter__number\">{{ counter }}</span>\n    </div>\n    <deck-stack #stack [items]=\"items\">\n    </deck-stack>\n    <div class=\"controls\">\n      <button deckTouchAnimation class=\"button button--reject\" (click)=\"reject($event)\">\n        <i class=\"fa fa-times\"></i>\n      </button>\n      <button deckTouchAnimation class=\"button button--accept\" (click)=\"accept($event)\">\n        <i class=\"fa fa-check\"></i>\n      </button>\n    </div>\n  </div>\n</div>\n"
+module.exports = "<div class=\"container\">\n  <div class=\"content\">\n    <h1>Deck Stack</h1>\n    <div class=\"counter\" id=\"counter\">\n      <svg width=\"40\" height=\"40\" viewBox=\"0 0 60 60\">\n        <path d=\"M55.215 8.397c-0.336-1.32-1.968-2.397-3.63-2.397h-43.17c-1.665 0-3.297 1.077-3.63 2.397l-0.603 3.603h51.633l-0.6-3.603zM58.236 15h-56.475c-1.026 0-1.827 0.882-1.731 1.905l2.769 35.007c0.114 1.182 1.11 2.088 2.298 2.088h49.803c1.191 0 2.184-0.906 2.298-2.088l2.769-35.007c0.099-1.023-0.705-1.905-1.731-1.905zM37.314 25.125c1.554 0 2.814 1.26 2.814 2.814s-1.26 2.814-2.814 2.814-2.814-1.263-2.814-2.817c0-1.551 1.26-2.811 2.814-2.811zM16.5 42l7.458-17.142 8.481 13.728 7.272-3.612 3.789 7.026h-27z\"></path>\n      </svg>\n      <span class=\"counter__number\">{{ counter }}</span>\n    </div>\n    <deck-stack #stack>\n      <li class=\"stack__item\" *ngFor=\"let item of items\">\n        <img [attr.src]=\"item\"/>\n      </li>\n    </deck-stack>\n    <div class=\"controls\">\n      <button deckTouchAnimation class=\"button button--reject\" (click)=\"reject($event)\">\n        <i class=\"fa fa-times\"></i>\n      </button>\n      <button deckTouchAnimation class=\"button button--accept\" (click)=\"accept($event)\">\n        <i class=\"fa fa-check\"></i>\n      </button>\n    </div>\n  </div>\n</div>\n"
 
 /***/ }),
 
@@ -202,7 +202,7 @@ Object(__WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_dynamic__["a" /* pl
 /***/ "../../../../../src/stack/stack.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<ul id=\"stack_slamet\" class=\"stack stack--slamet\">\n  <li class=\"stack__item\" *ngFor=\"let item of items\">\n    <img [attr.src]=\"item\"/>\n  </li>\n</ul>\n"
+module.exports = "<ul id=\"stack_slamet\" class=\"stack stack--slamet\">\n  <ng-content></ng-content>\n</ul>\n"
 
 /***/ }),
 
@@ -247,8 +247,8 @@ var StackComponent = (function () {
     StackComponent.prototype.accept = function (callback) {
         this.slamet.accept(callback);
     };
-    StackComponent.prototype.reject = function () {
-        this.slamet.reject();
+    StackComponent.prototype.reject = function (callback) {
+        this.slamet.reject(callback);
     };
     StackComponent.prototype.ngAfterViewInit = function () {
         this.init();
