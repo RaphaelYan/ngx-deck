@@ -1,6 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { StackComponent } from './stack.component';
+import { StackComponent } from './stack/stack.component';
 
 describe('StackComponent', () => {
   let component: StackComponent;

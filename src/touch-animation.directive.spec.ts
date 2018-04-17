@@ -1,4 +1,4 @@
-import { TouchAnimationDirective } from './touch-animation.directive';
+import { TouchAnimationDirective } from './touch-animation/touch-animation.directive';
 
 describe('TouchAnimationDirective', () => {
   it('should create an instance', () => {

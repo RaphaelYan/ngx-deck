@@ -26,6 +26,9 @@ export class StackComponent implements AfterViewInit {
   }
 
   private init() {
+    if (typeof Stack === 'undefined') {
+      return console.error('Please include Stack assets/js');
+    }
     this.slamet = new Stack(document.getElementById('stack_slamet'), {
       infinite: false,
       onEndStack: (instance) => {
