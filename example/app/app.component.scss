@@ -1,46 +1,68 @@
-@import url('https://fonts.googleapis.com/css?family=Montserrat|Open+Sans');
-
 html, body {
-  color: #444;
-  font-family: 'Open Sans', sans-serif;
-  background: #4aabc9;
-  background: linear-gradient(135deg, #4aabc9 0%,#7db9e8 100%);
+  background: lightblue;
   margin: 0;
   padding: 0;
   width: 100%;
   height: 100%;
 }
 
-h1 {
-  font-family: 'Montserrat';
-  font-weight: 200;
-  padding: 30px;
-  margin: 0;
+app-root {
+  flex: 1;
 }
 
-a.neat {
-  color: inherit;
-  text-decoration: none;
-}
-
-a.shadowy {
-  padding: .5rem 1rem;
-  transition: .2s all ease-in;
-  
-  &:hover {
-    color: #4aabc9;
-    background-color: #fff;
-  }
-}
-
-.greetings {
-  color: #fff;
-}
-
-.center {
+.center, body {
   height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
+}
+
+.container {
+	display: -webkit-flex;
+	display: flex;
+	-webkit-justify-content: center;
+	justify-content: center;
+	-webkit-align-items: center;
+	align-items: center;
+	-webkit-flex-wrap: wrap;
+	flex-wrap: wrap;
+}
+
+.content {
+  -webkit-align-self: stretch;
+	align-self: stretch;
+	overflow: hidden;
+  padding: 8em 2em 3em;
+  background: #91c794;
+  width: 50%;
+  position: relative;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+}
+
+.button {
+	border-radius: 50%;
+	background: #fff;
+}
+
+
+@media (max-width: 650px) {
+  .container .content {
+    padding-left: 0;
+    padding-right: 0;
+    width: 100%;
+  }
+}
+
+@media (max-width: 360px) {
+  .stack.stack--slamet {
+    width: 250px;
+  }
 }
