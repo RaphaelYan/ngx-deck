@@ -125,3 +125,18 @@ app-root {
 	bottom: -5px;
 	right: -5px;
 }
+
+@media (max-height: 730px) {
+  .container .content {
+    padding-top: 80px;
+  }
+}
+
+@media (max-height: 660px) {
+  .container .content {
+    padding-top: 60px;
+    .counter {
+      top: 10px;
+    }
+  }
+}
