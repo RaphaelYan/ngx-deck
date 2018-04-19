@@ -246,6 +246,9 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var StackComponent = (function () {
     function StackComponent() {
         this.items = [];
+        this.options = {
+            infinite: false
+        };
     }
     StackComponent.prototype.accept = function (callback) {
         this.slamet.accept(callback);
@@ -258,7 +261,7 @@ var StackComponent = (function () {
             return console.error('Please include Stack assets/js');
         }
         this.slamet = new Stack(document.getElementById('stack_slamet'), {
-            infinite: false,
+            infinite: this.options.infinite,
             onEndStack: function (instance) {
                 setTimeout(function () {
                     console.warn('onEndStack');
@@ -270,6 +273,10 @@ var StackComponent = (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["A" /* Input */])(),
         __metadata("design:type", Object)
     ], StackComponent.prototype, "items", void 0);
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["A" /* Input */])(),
+        __metadata("design:type", Object)
+    ], StackComponent.prototype, "options", void 0);
     StackComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
             selector: 'deck-stack',
