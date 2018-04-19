@@ -11,6 +11,9 @@ declare var classie: any;
 })
 export class StackComponent {
   @Input() public items = [];
+  @Input() public options = {
+    infinite: false
+  };
   private slamet: any;
 
   public accept(callback) {
@@ -26,7 +29,7 @@ export class StackComponent {
       return console.error('Please include Stack assets/js');
     }
     this.slamet = new Stack(document.getElementById('stack_slamet'), {
-      infinite: false,
+      infinite: this.options.infinite,
       onEndStack: (instance) => {
         setTimeout(() => {
           console.warn('onEndStack');
